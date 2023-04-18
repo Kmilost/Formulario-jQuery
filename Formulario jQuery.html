@@ -48,6 +48,23 @@
             var nombre = $("#itNombre").val();
             var correo = $("#itCorreo").val();
             var Asunto = $("#itAsunto").val();
+
+            if(nombre == ""){
+                $("mensaje1").fadeIn();
+                return false;
+            }else{
+                $("mensaje1").fadeOut();
+                if(correo == "" || expr.test(correo)){
+                    $("mensaje2").fadeIn();
+                    return false;
+                }else{
+                    $("mensaje2").fadeOut();
+                    if(asunto == ""){
+                        $("mensaje3").fadeIn();
+                        return false;
+                    }
+                }
+            }
         })
     });
 
