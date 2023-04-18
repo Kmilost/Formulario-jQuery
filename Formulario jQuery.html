@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación formulario jQuery</title>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+    <style type="text/css">
+
+        .campo{
+            border: solid 4px #cece76;
+            font-size: 18px;
+            padding: 10px;
+            margin-bottom: 35px;
+            width: 300px;
+        }
+
+        .boton{
+            background: #849175;
+            border: solid 0;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .errores{
+            -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background: red;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            display: none;
+            font-size: 14px;
+            margin-top: -80px;
+            margin-left: 340px;
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+
+<script>
+    var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+
+    $(document).ready(function(){
+        $("bEnviar").click(function(){
+            var nombre = $("#itNombre").val();
+            var correo = $("#itCorreo").val();
+            var Asunto = $("#itAsunto").val();
+        })
+    });
+
+
+</script>
+
+</head>
+<body>
+    <div id="container">
+        <form id="miFormulario">
+
+            <label>*Nombre:</label><br />
+            <input type="text" id="itNombre"  class="campo" /><br />
+            <div id="mensaje1" class="errores">Dame tu Nombre</div>
+
+            <label>*Correo electronico:</label><br />
+            <input type="text" id="itMail"  class="campo" /><br />
+            <div id="mensaje2" class="errores">Dame un mail correcto</div>
+
+            <label>*Asunto:</label><br />
+            <input type="text" id="itAsunto"  class="campo" /><br />
+            <div id="mensaje3" class="errores">Dime el motivo</div>
+
+            <input type="submit" id="bEnviar" value="Enviar datos" class="boton" /><br />
+
+        </form>
+    </div>
+    
+    
+
+</body>
+</html>
