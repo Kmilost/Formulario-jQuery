@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validación formulario jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
 
     <style type="text/css">
@@ -24,8 +26,8 @@
             font-family: 'Comfortaa',sans-serif;
             font-size: 18px;
             margin: 0 auto;
-            padding: 30 px;
-            width: 350 px;
+            padding: 30px;
+            width: 350px;
         }
             
         .campo{
@@ -63,23 +65,23 @@
     var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 
     $(document).ready(function(){
-        $("bEnviar").click(function(){
+        $("#bEnviar").click(function(){
             var nombre = $("#itNombre").val();
-            var correo = $("#itCorreo").val();
-            var Asunto = $("#itAsunto").val();
+            var correo = $("#itMail").val();
+            var asunto = $("#itAsunto").val();
 
             if(nombre == ""){
-                $("mensaje1").fadeIn();
+                $("#mensaje1").fadeIn();
                 return false;
             }else{
-                $("mensaje1").fadeOut();
-                if(correo == "" || expr.test(correo)){
-                    $("mensaje2").fadeIn();
+                $("#mensaje1").fadeOut();
+                if(correo == "" || !expr.test(correo)){
+                    $("#mensaje2").fadeIn();
                     return false;
                 }else{
-                    $("mensaje2").fadeOut();
+                    $("#mensaje2").fadeOut();
                     if(asunto == ""){
-                        $("mensaje3").fadeIn();
+                        $("#mensaje3").fadeIn();
                         return false;
                     }
                 }
@@ -119,7 +121,7 @@
 
 
 
-        <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
         
+
     </body>
 </html>
